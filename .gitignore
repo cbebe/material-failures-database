@@ -5,3 +5,6 @@ node_modules/
 
 # ignore .DS_Store
 .DS_Store
+
+.vscode
+server/coverage
