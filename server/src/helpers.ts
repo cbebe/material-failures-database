@@ -1,7 +1,9 @@
 import * as constants from "./constants";
 import isArray from "lodash/fp/isArray";
 
-import crypto from "crypto";
+import Crypto from "crypto";
+
+// TODO: Create the Shape of the table
 
 /**
  * Generates a password hash. Author: Janith Kasun
@@ -10,7 +12,7 @@ import crypto from "crypto";
  * @return { String } hash      password hash
  */
 export const getPasswordHash = (password: string) => {
-  const sha256 = crypto.createHash("sha256");
+  const sha256 = Crypto.createHash("sha256");
   const hash = sha256.update(password).digest("base64");
 
   return hash;
@@ -215,7 +217,8 @@ export const formatByPromptVisibility = (table) => {
  * @param  { Object Literal } table    visibility table
  * @return { Object Literal } response formatted table
  */
-export const formatByValueVisibility = (table) => {
+// TODO: pls remove any
+export const formatByValueVisibility = (table: any) => {
   const { excludedColumns } = constants;
   const response = { ...table };
 
