@@ -8,7 +8,10 @@
   "description": "web app for material failures database",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "nodemon dist/index.js",
+    "watch": "tsc -w",
     "test": "jest --forceExit",
     "heroku-postbuild": "cd ../client && npm install --only=dev && npm install && npm run build"
   },
